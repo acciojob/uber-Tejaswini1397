@@ -10,6 +10,7 @@ public class Cab {
     private int perKmRate;
     private boolean available;
     @OneToOne
+    @JoinColumn
     Driver driver;
 
     public Cab() {
