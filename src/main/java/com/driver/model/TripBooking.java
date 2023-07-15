@@ -95,4 +95,12 @@ public class TripBooking {
     @ManyToOne
     @JoinColumn
     private Cab cab;
+
+    public Cab getCab() {
+        return cab;
+    }
+
+    public void setCab(Cab cab) {
+        this.cab = cab;
+    }
 }
