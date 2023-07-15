@@ -56,7 +56,7 @@ public class CustomerServiceImpl implements CustomerService {
 				}
 			}
 		}
-		if (availableDrivers==null) {
+		if (driver==null) {
 			throw new Exception("No cab available!");
 		}
 		Customer customer=customerRepository2.findById(customerId).get();
