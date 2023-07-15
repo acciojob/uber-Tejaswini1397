@@ -11,8 +11,18 @@ public class Driver {
     private String mobile;
     @Column(unique = true, nullable = false)
     private String password;
-    @OneToOne
+    @OneToOne(mappedBy = "driver",cascade = CascadeType.ALL)
     private Cab cab;
+    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
+    private List<TripBooking> tripBookingList = new ArrayList<>();
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
+    }
 
     public int getDriverId() {
         return driverId;
