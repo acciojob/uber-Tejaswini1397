@@ -48,7 +48,7 @@ public class DriverServiceImpl implements DriverService {
 		if(driver!=null){
 			Cab cab=cabRepository3.findByDriver(driver);
 			if(cab!=null){
-				cab.setAvailable(true);
+				cab.setAvailable(false);
 				cabRepository3.save(cab);
 			}
 		}

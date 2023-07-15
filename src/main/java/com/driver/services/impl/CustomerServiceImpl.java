@@ -72,6 +72,7 @@ public class CustomerServiceImpl implements CustomerService {
 		if (tripBookingOptional.isPresent()) {
 			TripBooking tripBooking = tripBookingOptional.get();
 			tripBooking.setStatus(TripStatus.CANCELED);
+
 			tripBookingRepository2.save(tripBooking);
 		}
 	}
@@ -82,6 +83,7 @@ public class CustomerServiceImpl implements CustomerService {
 		Optional<TripBooking> tripBookingOptional = tripBookingRepository2.findById(tripId);
 		if (tripBookingOptional.isPresent()) {
 			TripBooking tripBooking = tripBookingOptional.get();
+			tripBookingRepository2.deleteById(tripId);
 			tripBooking.setStatus(TripStatus.COMPLETED);
 			tripBookingRepository2.save(tripBooking);
 		}
