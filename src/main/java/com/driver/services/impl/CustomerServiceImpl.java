@@ -48,16 +48,16 @@ public class CustomerServiceImpl implements CustomerService {
 		//Avoid using SQL queryr
 		TripBooking tripBooking = new TripBooking();
 		Driver driver=null;
-		List<Driver> availableDrivers = driverRepository2.findAll();
-		for(Driver drv:availableDrivers){
-			if(driver.getCab().getAvailable()){
-				if(driver==null || driver.getDriverId()>drv.getDriverId()){
-					driver=drv;
+		List<Driver>allDriver = driverRepository2.findAll();
+		for(Driver drv : allDriver) {
+			if(drv.getCab().getAvailable()) {
+				if (driver == null || driver.getDriverId() > drv.getDriverId()) {
+					driver = drv;
 				}
 			}
 		}
 		if (availableDrivers==null) {
-			throw new Exception("No value present");
+			throw new Exception("No cab available!");
 		}
 		Customer customer=customerRepository2.findById(customerId).get();
 		tripBooking.setDistanceInKm(distanceInKm);
