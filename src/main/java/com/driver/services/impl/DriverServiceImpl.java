@@ -31,9 +31,9 @@ public class DriverServiceImpl implements DriverService {
 		cab.setDriver(driver);
 		cab.setPerKmRate(10);
 		cab.setAvailable(true);
-		driverRepository3.save(driver);
 		driver.setCab(cab);
-		cabRepository3.save(cab);
+		driverRepository3.save(driver);
+
 	}
 
 	@Override
