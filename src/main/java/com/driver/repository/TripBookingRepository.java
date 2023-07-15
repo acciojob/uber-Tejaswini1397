@@ -9,5 +9,4 @@ import java.util.Optional;
 @Repository
 public interface TripBookingRepository extends JpaRepository<TripBooking, Integer>{
 
-    Optional<TripBooking> findByDriverAndStatus(Driver driver);
 }
